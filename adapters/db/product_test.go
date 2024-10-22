@@ -66,7 +66,7 @@ func TestProductDb_Get(t *testing.T) {
 		log.Fatal("Failed to connect to the database")
 	}
 
-	//	defer Db.Close()
+	defer Db.Close()
 	productDb := db.NewProductDb(Db)
 	product, err := productDb.Get("abc")
 
@@ -74,5 +74,36 @@ func TestProductDb_Get(t *testing.T) {
 	require.Equal(t, "Product 1", product.GetName())
 	require.Equal(t, application.DISABLED, product.GetStatus())
 	require.Equal(t, float64(1), product.GetPrice())
+
+}
+
+func TestProductDb_Save(t *testing.T) {
+	setUp()
+	if Db == nil {
+		log.Fatal("Failed to connect to the database")
+	}
+
+	defer Db.Close()
+	productDb := db.NewProductDb(Db)
+
+	product := application.NewProduct()
+	product.Name = "test"
+	product.Price = 1.5
+
+	productResult, err := productDb.Save(product)
+
+	require.Nil(t, err)
+	require.Equal(t, productResult.GetName(), product.GetName())
+	require.Equal(t, productResult.GetStatus(), product.GetStatus())
+	require.Equal(t, productResult.GetPrice(), product.GetPrice())
+
+	product.Status = application.ENABLED
+
+	productResult, err = productDb.Save(product)
+
+	require.Nil(t, err)
+	require.Equal(t, productResult.GetName(), product.GetName())
+	require.Equal(t, productResult.GetStatus(), product.GetStatus())
+	require.Equal(t, productResult.GetPrice(), product.GetPrice())
 
 }
