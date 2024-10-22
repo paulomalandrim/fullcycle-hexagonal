@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"errors"
 
 	_ "github.com/mattn/go-sqlite3" // sqlite3 driver
 	"github.com/paulomalandrim/go-hexagonal/application"
@@ -12,10 +13,15 @@ type ProductDb struct {
 }
 
 func NewProductDb(db *sql.DB) *ProductDb {
-	return &ProductDb{db}
+	return &ProductDb{db: db}
 }
 
 func (p *ProductDb) Get(id string) (application.ProductInterface, error) {
+
+	if p.db == nil {
+		return nil, errors.New("database is not initialized")
+	}
+
 	var product application.Product
 	stmt, err := p.db.Prepare("select id, name, price, status from products where id = ?")
 	if err != nil {
