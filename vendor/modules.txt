@@ -1,0 +1,29 @@
+# github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
+## explicit
+github.com/asaskevich/govalidator
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/golang/mock v1.6.0
+## explicit
+github.com/golang/mock/gomock
+# github.com/inconshreveable/mousetrap v1.1.0
+github.com/inconshreveable/mousetrap
+# github.com/mattn/go-sqlite3 v1.14.7
+## explicit
+github.com/mattn/go-sqlite3
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/satori/go.uuid v1.2.0
+## explicit
+github.com/satori/go.uuid
+# github.com/spf13/cobra v1.7.0
+## explicit
+github.com/spf13/cobra
+# github.com/spf13/pflag v1.0.5
+github.com/spf13/pflag
+# github.com/stretchr/testify v1.8.0
+## explicit
+github.com/stretchr/testify/assert
+github.com/stretchr/testify/require
+# gopkg.in/yaml.v3 v3.0.1
+gopkg.in/yaml.v3
