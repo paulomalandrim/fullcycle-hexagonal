@@ -1,11 +1,17 @@
 # github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 ## explicit
 github.com/asaskevich/govalidator
+# github.com/codegangsta/negroni v1.0.0
+## explicit
+github.com/codegangsta/negroni
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
 # github.com/golang/mock v1.6.0
 ## explicit
 github.com/golang/mock/gomock
+# github.com/gorilla/mux v1.8.1
+## explicit
+github.com/gorilla/mux
 # github.com/inconshreveable/mousetrap v1.1.0
 github.com/inconshreveable/mousetrap
 # github.com/mattn/go-sqlite3 v1.14.7
